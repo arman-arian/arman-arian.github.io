@@ -2,6 +2,8 @@
 <head>
 <script src="//cdn.jsdelivr.net/npm/pouchdb@6.4.3/dist/pouchdb.min.js"></script>
 <script>
+    var db = new PouchDB('my_database');
+
   db.get('mittens').then(function (doc) {
   alert(doc[0]._id);
 });
