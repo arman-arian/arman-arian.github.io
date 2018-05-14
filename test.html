@@ -15,6 +15,11 @@
   ]
 };
 db.put(doc);
+  
+  db.get('mittens').then(function (doc) {
+  alert(doc);
+});
+  
 </script>
 </head>
 <body>
