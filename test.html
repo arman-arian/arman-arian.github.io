@@ -1,21 +1,20 @@
 <html>
 <head>
-<script type="text/javascript">
-function getParameterByName(name, url) {
-    if (!url) url = window.location.href;
-    name = name.replace(/[\[\]]/g, "\\$&");
-    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-    if (!results) return null;
-    if (!results[2]) return '';
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-window.onload = function() {
-  var foo = getParameterByName('foo');
-  alert(foo);
+<script src="//cdn.jsdelivr.net/npm/pouchdb@6.4.3/dist/pouchdb.min.js"></script>
+<script>
+  var db = new PouchDB('my_database');
+    var doc = {
+  "_id": "mittens",
+  "name": "Mittens",
+  "occupation": "kitten",
+  "age": 3,
+  "hobbies": [
+    "playing with balls of yarn",
+    "chasing laser pointers",
+    "lookin' hella cute"
+  ]
 };
-
+db.put(doc);
 </script>
 </head>
 <body>
