@@ -17,7 +17,7 @@
 db.put(doc);
   
   db.get('mittens').then(function (doc) {
-  alert(doc._id);
+  alert(doc[0]._id);
 });
   
 </script>
